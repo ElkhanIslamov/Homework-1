@@ -53,3 +53,29 @@
 //{
 //    Console.Write(arr[i] + " ");
 //}
+
+int[] arr = { 1,2,3,4,5,6,7,8,9,10};
+int target = 9;
+int left = 0;
+int right = arr.Length-1;
+while (left < right)
+{
+    int middle = (left + right)/2;
+    if (arr[middle] == target)
+    {
+        Console.WriteLine($"{target} index = {middle}");
+        break;
+    }
+    else if (arr[middle] > target)
+    {
+        right = middle - 1;
+    }
+    else
+    {
+        left = middle + 1;
+    }
+}
+for (int i = 0; i < arr.Length; i++)
+{
+    Console.Write(arr[i] + " ");
+}
